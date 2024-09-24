@@ -2,6 +2,9 @@
 
 {% block content %}
 
+<a href="{% url 'playlist_create' %}" class="btn btn-primary mb-3">Criar Playlist</a>
+
+
 {% for playlist in object_list %}
 <li>
     {{ playlist.nome }}

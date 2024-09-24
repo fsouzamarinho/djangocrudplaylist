@@ -41,6 +41,7 @@ class MusicaCreateView(CreateView):
     model = Musica
     form_class = MusicaForm
     template_name = 'musicas/musica_form.html'
+    success_url = reverse_lazy('musica_list')
 
 class MusicaUpdateView(UpdateView):
     model = Musica
