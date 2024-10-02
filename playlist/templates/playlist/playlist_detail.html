@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h2>{{ object.nome }}</h2>
+<h2>{{ playlists.nome }}</h2>
 <ul>
-    {% for musica in object.musicas.all %}
+    {% for musica in playlists.musicas.all %}
     <li>{{ musica.titulo }} - {{ musica.artista }} - <img src="{{ musica.capa.url }}" alt="{{ musica.titulo }}" width=100></li>
     {% endfor %}
 </ul>
-<a href="{% url 'playlist_update' object.pk %}">Editar</a>
-<a href="{% url 'playlist_delete' object.pk %}">Excluir</a>
+<a href="{% url 'playlist_update' playlists.pk %}">Editar</a>
+<a href="{% url 'playlist_delete' playlists.pk %}">Excluir</a>
 
 {% endblock %}

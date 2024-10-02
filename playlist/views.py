@@ -6,9 +6,13 @@ from playlist.models import Musica, Playlist
 class PlaylistListView(ListView):
     model = Playlist
     template_name = 'playlist/playlist_list.html'
+    context_object_name = 'playlists'
+    paginate_by = 8
+    queryset = Playlist.objects.order_by('-id')
 
 class PlaylistDetailView(DetailView):
     model = Playlist
+    context_object_name = 'playlists'
     template_name = 'playlist/playlist_detail.html'
 
 class PlaylistCreateView(CreateView):
@@ -25,6 +29,7 @@ class PlaylistUpdateView(UpdateView):
 
 class PlaylistDeleteView(DeleteView):
     model = Playlist
+    context_object_name = 'playlists'
     success_url = reverse_lazy('playlist_list')  
 
 # musicas crud

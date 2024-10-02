@@ -10,3 +10,4 @@ class MusicaForm(forms.ModelForm):
     class Meta:
         model = Musica
         fields = '__all__'
+

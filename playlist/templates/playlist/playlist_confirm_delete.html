@@ -2,10 +2,10 @@
 
 {% block content %}
 <h1>Confirmar Exclusão</h1>
-<p>Tem certeza que deseja excluir a playlist "{{ object.nome }}"?</p>
+<p>Tem certeza que deseja excluir a playlist "{{ playlists.nome }}"?</p>
 <form method="POST">
     {% csrf_token %}
     <input type="submit" value="Sim">
-    <a href="{% url 'playlist_detail' object.pk %}">Não</a>
+    <a href="{% url 'playlist_detail' playlists.pk %}">Não</a>
 </form>
 {% endblock %}
